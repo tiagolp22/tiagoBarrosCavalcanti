@@ -1,0 +1,166 @@
+Variables 
+    tableau lesNotes[5] : entier
+Début 
+    //on remplit le tableau 
+    lesNotes[0] <- 78 
+    lesNotes[1] <- 95
+    lesNotes[2] <- 54 
+    lesNotes[3] <- 77 
+    lesNotes[4] <- 71
+
+    //afficher le contenu du tableau à la position 3 
+    //affichera donc le 4ème élément 
+    Ecrire(lesNotes[3]) 
+
+    //afficher le premier élément 
+    Ecrire(lesNotes[0])
+    //ceci va afficher une erreur : il n'y a rien à la position 5 
+    Ecrire(lesNotes[5])
+Fin 
+
+//a) créer et remplir un tableau contenant vos 4 fruits préférés (sans boucle)
+//b) faire afficher votre fruit préféré, c'est à dire celui à la position 0
+//c) faire afficher le contenu complet du tableau à l'aide d'une boucle en mettant une variable entre les crochets
+//d) remplacer votre remplissage du tableau par une boucle aussi
+
+
+Variables 
+    tableau lesFruits[4] : chaine de caractère 
+Début 
+    lesFruits[0] <- "mangue"
+    lesFruits[1] <- "bleuet"
+    lesFruits[2] <- "pamplemousse"
+    lesFruits[3] <- "banane"
+
+    Ecrire("Mon fruit préféré est : " & lesFruits[0])
+
+    Pour i allant de 0 à 3
+        Ecrire(lesFruits[i])
+    Fin Pour 
+
+Fin
+
+
+Variables 
+    tableau lesFruits[4] : chaine de caractère 
+    i : entier 
+Début 
+    //avec une boucle pour faire remplir le tableau par l'usager 
+    Pour i allant de 0 à 3 
+        Ecrire("Entrez un de vos fruits préférés.")
+        Lire(lesFruits[i])
+    Fin Pour 
+
+    Ecrire("Mon fruit préféré est : " & lesFruits[0])
+
+    //boucle pour afficher le contenu du tableau à l'écran
+    Pour i allant de 0 à 3
+        Ecrire(lesFruits[i])
+    Fin Pour 
+
+Fin 
+
+Exercice #2 
+a) Avec une boucle Pour, faire remplir un tableau de 15 entiers par l'usager. 
+b) Avec une AUTRE boucle Pour, après le remplissage, repasser à travers le tableau et calculer la somme des entiers contenus dans le tableau ainsi que la moyenne des entiers contenus dans le tableau. 
+
+Variables 
+    tableau lesEntiers[3] : entier 
+    somme, i : entier 
+    moyenne : reel 
+Début 
+    //Boucle de remplissage 
+    Pour i allant de 0 à 2 
+        Ecrire("Entrez un nombre.")
+        Lire(lesEntiers[i])
+    Fin Pour 
+
+    somme <- 0 
+    Pour i allant de 0 à 2 
+        somme <- somme + lesEntiers[i]
+    Fin Pour 
+
+    moyenne <- somme / 3
+Fin 
+
+lesEntiers 
+0   1   2 
+5   8   3
+
+i   lesEntiers[i]   somme 
+0                   0
+1                    5
+2                    13
+                     16
+
+
+//pour 1000 éléments
+Variables 
+    tableau lesEntiers[1000] : entier 
+    somme, i : entier 
+    moyenne : reel 
+Début 
+    //Boucle de remplissage 
+    Pour i allant de 0 à 999
+        Ecrire("Entrez un nombre.")
+        Lire(lesEntiers[i])
+    Fin Pour 
+
+    somme <- 0 
+    Pour i allant de 0 à 999
+        somme <- somme + lesEntiers[i]
+    Fin Pour 
+
+    moyenne <- somme / 1000
+Fin 
+
+
+//pour toutes les tailles de tableau
+Variables 
+    tableau lesEntiers[15] : entier 
+    somme, i : entier 
+    moyenne : reel 
+Début 
+    //Boucle de remplissage 
+    Pour i allant de 0 à Taille(lesEntiers) - 1
+        Ecrire("Entrez un nombre.")
+        Lire(lesEntiers[i])
+    Fin Pour 
+
+    somme <- 0 
+    Pour i allant de 0 à Taille(lesEntiers) - 1
+        somme <- somme + lesEntiers[i]
+    Fin Pour 
+
+    moyenne <- somme / Taille(lesEntiers)
+Fin 
+
+
+Exercice #3 
+a) Avec une boucle Pour, faire remplir un tableau de 10 entiers par l'usager.
+b) Dans une nouvelle boucle (mais UNE SEULE NOUVELLE BOUCLE), calculer simultanément la somme des entiers positifs dans le tableau et la somme des entiers négatifs du tableau (dans deux variables différentes).
+Ex : Pour le tableau suivant [55, -33, 7, 0, 18, -100, 33], la somme des entiers positifs c'est (55 + 7 + 18 + 33) = 113 et la somme des entiers négatifs dans le tableau est (-33 + -100) = -133
+
+Exercice 4 
+a) Avec une boucle Pour, faire remplir un tableau de 10 entiers par l'usager.
+b) Avec une boucle Tant Que, trouvez l'indice (la position dans le tableau) du premier élément nul (de valeur 0) et affichez cette position dans un message. S'il n'y a pas d'éléments nuls dans le tableau, affichez "Il n'y a pas d'élément nul."
+Ex : Pour le tableau suivant [55, -33, 7, 0, 18, 0, 33], la position du premier élément nul dans le tableau est 3. 
+
+Exercice 5 
+Variables 
+    tableau suite[7] : entiers
+    i : entier 
+Début 
+    suite[0] <- 1 
+    suite[1] <- 1
+    Pour i allant de 2 à 6
+        suite[i] <- suite[i-1] + suite[i-2]
+    Fin pour 
+Fin 
+
+FAITES LA TRACE 
+
+Exercice 6 
+a) Avec une boucle Pour, faire remplir un tableau de 10 entiers par l'usager.
+b) Avec une autre boucle Pour, trouvez l'indice ET la valeur de l'élément le plus grand dans le tableau.
+
